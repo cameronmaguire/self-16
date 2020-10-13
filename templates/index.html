@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block title %}
+Smart Electronic Location Flare
+{% endblock %}
+{% block body %}
+<header>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+        <li><a href="{{ url_for('requirements') }}" >Requirements</a></li>
+        <li><a href="{{ url_for('connectivity') }}">Connectivity</a></li>
+        <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+        <li><a href="{{ url_for('sea_trials') }}">Sea Trials</a></li>
+    </ul>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="container nav-wrapper">
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse right"><i class="material-icons">menu</i></a>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="logo">SELF-16</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('index') }}" class="active">Home</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('requirements') }}" >Requirements</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('connectivity') }}">Connectivity</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('sea_trials') }}">Sea Trials</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="parallax-container">
+        <div class="section no-pad">
+            <div class="container" id="title-circle">
+                <div class="center title-circle valign-wrapper">
+                    <h1>Welcome to SELF-16</h1> 
+                </div>
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="{{ url_for('static', filename='images/header.jpg') }}" height="1080" width="1920">
+        </div>
+    </div>
+    <div class="container center">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="strike">
+                    <span><h2>About SELF</h2></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <h3>Smart</h3>
+                <img class="sdimensions responsive-img" src="{{ url_for('static', filename='images/about1.jpg') }}"/>
+                <p>When activated, the SELF automatically emails the aircraft's owner and emergency services with its geolocation co-ordinates.</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <h3>Electronic</h3>
+                <img class="sdimensions responsive-img" src="{{ url_for('static', filename='images/about2.jpg') }}">
+                <p>4 x AA 1.5V Lithium batteries provide 3+ years of operational life. Certified intrinsically safe for use in Class 1, Division 1 Groups A, B, C, D environments.</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <h3>Location</h3>
+                <img class="sdimensions responsive-img" src="{{ url_for('static', filename='images/about3&connectivity2.jpg') }}">
+                <p>Global LEO Satellite Operation – Globalstar Simplex Data Network which gives a position accuracy of up to 10m radius, up to 50 times per day.</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <h3>Flare</h3>
+                <img class="sdimensions responsive-img" src="{{ url_for('static', filename='images/about4.jpg') }}">
+                <p>The SELF acts as a flare through sending location data to any email address in the world. It produces a definite signal of where the device is located.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="strike">
+                    <span><h2>Twitter Feed</h2></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m10 l8 offset-m1 offset-l2">
+                <a class="twitter-timeline" data-height="500" href="https://twitter.com/SELF_RMDL?ref_src=twsrc%5Etfw">Tweets by SELF_RMDL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="strike">
+                    <span><h2>Downloads</h2></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p>Click on a file to download.</p>
+            <div class="col s12 m12 l4">
+                <div class="download">
+                    <p>Connected Aircraft eEnablement '17 (pdf)</p>
+                    <a href="{{ url_for('static', filename='downloads/Connected Aircraft eEnablement 2017 Brochure.pdf') }}" target="_blank">
+                    <button class="waves-effect waves-light btn" type="button">Download</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col s12 m12 l4">
+                <div class="download">
+                    <p>Flight Data Recorders Location C.S. (pdf)</p>
+                    <a href="{{ url_for('static', filename='downloads/Case Study for Location of Flight Data Recorders  - IET format - Final 2.pdf') }}" target="_blank">
+                        <button class="waves-effect waves-light btn" type="button">Download</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col s12 m12 l4">
+                <div class="download">
+                    <p>Flyer 06-17 (pdf)</p>
+                    <a href="{{ url_for('static', filename='downloads/Flyer 06-17.pdf') }}" target="_blank">
+                        <button class="waves-effect waves-light btn" type="button">Download</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

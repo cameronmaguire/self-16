@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}
+Connectivity | Smart Electronic Location Flare
+{% endblock %}
+{% block body %}
+<header>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('requirements') }}" >Requirements</a></li>
+        <li><a href="{{ url_for('connectivity') }}" class="active">Connectivity</a></li>
+        <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+        <li><a href="{{ url_for('sea_trials') }}">Sea Trials</a></li>
+    </ul>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="container nav-wrapper">
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse right"><i class="material-icons">menu</i></a>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="logo">SELF-16</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('requirements') }}" >Requirements</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('connectivity') }}" class="active">Connectivity</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('sea_trials') }}">Sea Trials</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="strike">
+                    <span><h2>Connectivity</h2></span>
+                </div>
+            </div>
+        </div>
+        <div class="row valign-wrapper">
+            <div class="center col s12 m12 l6">
+                <img class="mdimensions responsive-img" src="{{ url_for('static', filename='images/connectivity1.jpg') }}">
+            </div>
+            <div class="col s12 m12 l6">
+                <h3>Connecting and hosting the SELF</h3>
+                <p>The SELF® is not able to be connected, either electronically or mechanically, into aircraft systems – it is a passive passenger on the aircraft – very low or no certification requirements.<br>It does not affect or duplicate any of the future intended connectivity concepts.</p>
+            </div>
+        </div>
+        <div class="row valign-wrapper">
+            <div class="center col s12 m12 l6 push-l6">
+                    <img class="mdimensions responsive-img" src="{{ url_for('static', filename='images/about3&connectivity2.jpg') }}">
+            </div>
+            <div class="col s12 m12 l6 pull-l6">
+                <h3>Ability to be Retro Fitted</h3>
+                <p>The SELF® is able to be retro-fit installed on any existing aircraft almost immediately – precise locations need to be agreed.</p>
+            </div>
+        </div>
+        <div class="row valign-wrapper">
+            <div class="center col s12 m12 l6">
+                <img class="mdimensions responsive-img" src="{{ url_for('static', filename='images/connectivity3.jpg') }}">
+            </div>
+            <div class="col s12 m12 l6">
+                <h3>Requirement of Self Application</h3>
+                <p>An on-going cost of satellite-based email facility is also required – but this does depend on the number of devices and messages.<br>Battery life is +2years due to the large dormant phase of operation, so maintenance can be included in standard 2-year industry cycles.</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}
+Sea Trials | Smart Electronic Location Flare
+{% endblock %}
+{% block body %}
+<header>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('requirements') }}" >Requirements</a></li>
+        <li><a href="{{ url_for('connectivity') }}">Connectivity</a></li>
+        <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+        <li><a href="{{ url_for('sea_trials') }}" class="active">Sea Trials</a></li>
+    </ul>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="container nav-wrapper">
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse right"><i class="material-icons">menu</i></a>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="logo">SELF-16</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('requirements') }}" >Requirements</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('connectivity') }}">Connectivity</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('sea_trials') }}" class="active">Sea Trials</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="strike">
+                    <span><h2>Sea Trials</h2></span>
+                </div>
+            </div>
+        </div>
+        <div class="row valign-wrapper">
+            <div class="col s12 m12 l6">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/UvMks6YgyFQ?rel=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col s12 m12 l6">
+                <p>At the recent International Conference on Flight Location &amp; Data Recovery in Orlando, Florida, our Operations Director took the opportunity to carry out some sea trials for our prototype SELF device. As you can see, the deployment of the device went well about 4-miles offshore from Cape Canaveral in Florida. The objective was to track the SELF through the currents in that area of the Atlantic to see if it would wash-up on the Florida coast or maybe get caught in the Gulf stream and head back to the UK!</p>
+            </div>
+        </div>
+        <div class="row valign-wrapper">
+            <div class="center col s12 m12 l6 push-l6">
+                <img class="mdimensions responsive-img" src="{{ url_for('static', filename='images/sea-trials2.jpg') }}">
+            </div>
+            <div class="col s12 m12 l6 pull-l6">
+                <p>After a week in the sea, working perfectly and sending out its tracking email alerts every six hours, the device did wash up on the Florida coast at a lovely place called Ballard Pines about 35 miles south of the release point, having circulated about 50 miles around the ocean. The final washing-up point was Lat/Lng: 27.897874, -80.467675. The device was easily located by David O’Kelley, Director of Product Management (pictured below) at FLYHT Aerospace Solutions Ltd; he had been at the Orlando conference and was tracking the location as a member of the conference user group! David lives in Oregon, in the North-West USA, as is currently organising the next stage of sea trials in the Pacific Ocean. Watch this space for details!</p>
+            </div>
+        </div>
+        <div class="row valign-wrapper">
+            <div class="center col s12 m12 l6">
+                <img class="mdimensions responsive-img" src="{{ url_for('static', filename='images/sea-trials3.jpg') }}">
+            </div>
+            <div class="col s12 m12 l6">
+                <p>For more information on the SELF sea trials and to join the Flight Location &amp; Data Recovery user group, please contact the SELF team using the <a id="hyperlink" href="{{ url_for('contact_us') }}">contact sheet</a>.</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

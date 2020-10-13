@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %}
+Requirements | Smart Electronic Location Flare
+{% endblock %}
+{% block body %}
+<header>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('requirements') }}" class="active">Requirements</a></li>
+        <li><a href="{{ url_for('connectivity') }}">Connectivity</a></li>
+        <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+        <li><a href="{{ url_for('sea_trials') }}">Sea Trials</a></li>
+    </ul>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="container nav-wrapper">
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse right"><i class="material-icons">menu</i></a>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="logo">SELF-16</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('requirements') }}" class="active">Requirements</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('connectivity') }}">Connectivity</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('sea_trials') }}">Sea Trials</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container center">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="strike">
+                    <span><h2>The Rationale for SELF</h2></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <h3 id="requirements">SELF Requirements</h3>
+                <img class="sdimensions responsive-img" src="{{ url_for('static', filename='images/requirements1.jpg') }}">
+                <p>In a maritime based accident event, identification of the location of the data, the locale of the ‘block-box’ is often hampered by;</p>
+                <ul class="browser-default left-align">
+                    <li>The depth of the sea,</li>
+                    <li>The range of the black-box radio beacon through water,</li>
+                    <li>The battery life once power is on permanently,</li>
+                    <li>Mechanical or physical failure,</li>
+                    <li>Remoteness of the location.</li>
+                </ul>
+            </div>
+            <div class="col s12 m6 l6">
+                <h3 id="requirements">SELF Design</h3>
+                <img class="sdimensions responsive-img" src="{{ url_for('static', filename='images/requirements2.jpg') }}">
+                <p>SELF-16 has been designed to be able to satisfy the ICAO GADSS SARPS</p>
+                <ul class="browser-default left-align">
+                    <li>The requirement for an aeroplane in distress to autonomously transmit information, from which a position can be determined at least once every minute.</li>
+                    <li>The requirement to provide a high probability of locating an accident site to within a 6 NM radius.</li>
+                    <li>The requirement for the autonomous transmission of position information to be capable of transmitting the information in the event of total electrical power loss.</li>
+                </ul>
+            </div>
+            <div class="col s12 m6 l6">
+                <h3>SELF Tracking</h3>
+                <img class="sdimensions responsive-img" src="{{ url_for('static', filename='images/requirements3.jpg') }}">
+                <p>Our own research identified that once the (current) 30-day battery life has expired, the time to find the aircraft data recorders has an average of over 600 days.<br>The SELF® has adapted a standard industry asset tracking device that is widely used to track the position of Trailers, Cargo Containers, Heavy Construction Equipment, Generators, Boats/Barges and any other valuable mobile asset.</p>
+            </div>
+            <div class="col s12 m6 l6">
+                <h3>SELF Function</h3>
+                <img class="sdimensions responsive-img" src="{{ url_for('static', filename='images/requirements4.jpg') }}">
+                <p>It functions by processing GPS satellite signals to obtain its position in terms of longitude and latitude and re-transmits this information over Globalstar’s Simplex Satellite Network.<br>In Standard Messaging Mode, the SELF® emails its position at regular power-on intervals that are programmed during the configuration process, and then returns to dormant airline mode. Cycle time for a message is around 2 minutes.</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

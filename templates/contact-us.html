@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact Us | Smart Electronic Location Flare
+{% endblock %}
+{% block body %}
+<header>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('requirements') }}" >Requirements</a></li>
+        <li><a href="{{ url_for('connectivity') }}">Connectivity</a></li>
+        <li><a href="{{ url_for('contact_us') }}" class="active">Contact Us</a></li>
+        <li><a href="{{ url_for('sea_trials') }}">Sea Trials</a></li>
+    </ul>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="container nav-wrapper">
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse right"><i class="material-icons">menu</i></a>
+                <ul>
+                    <li><a href="{{ url_for('index') }}" class="logo">SELF-16</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('requirements') }}" >Requirements</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('connectivity') }}">Connectivity</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('contact_us') }}" class="active">Contact Us</a></li>
+                    <li class="hide-on-med-and-down"><a href="{{ url_for('sea_trials') }}">Sea Trials</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container center">
+        <div class="row">
+             <div class="col s12 m12 l12">
+                <div class="strike">
+                    <span><h2>Contact Us</h2></span>
+                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m10 l8 offset-m1 offset-l2">
+                <h3>Drop us a line!</h3>
+                {% if success %}
+                    <div id="success">
+                        <img src="{{ url_for('static', filename='images/success.png') }}">
+                        <p id="success-text">Thank you for your inquiry!<br>We'll get back to you soon.</p>
+                    </div>
+                {% else %}
+                    <form action="{{ url_for('contact_us') }}" method="post">
+                        {{ form.hidden_tag() }}
+                        <div class="input-field col s12 m6 l6">
+                            <label for="first_name">First Name</label>
+                            <input name="first_name" id="first_name" type="text" class="validate" required>
+                            <span class="helper-text" data-error="Please enter your first name"></span>
+                        </div>
+                        <div class="input-field col s12 m6 l6">
+                            <label for="last_name">Last Name</label>
+                            <input name="last_name" id="last_name" type="text" class="validate" required>
+                            <span class="helper-text" data-error="Please enter your last name"></span>
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+                            <label for="email">Email</label>
+                            <input name="email" id="email" type="email" class="validate" required>
+                            <span class="helper-text" data-error="Please enter your email"></span>
+                        </div>
+                        <div class="input-field col s12 m12 l12">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" class="materialize-textarea validate" required></textarea>
+                            <span class="helper-text" data-error="Please enter your message"></span>
+                        </div>
+                    <button name="submit" class="btn waves-effect waves-light" id="submit" type="submit">Send</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+             <div class="col s12 m10 l8 offset-m1 offset-l2">
+                <h3>SELF-16</h3>
+                <p>Salisbury, Wilshire, UK</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
